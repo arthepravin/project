@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Kitchen - Dinner Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #fef9f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, #2e4a34, #486c52);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-weight: 400;
+            font-size: 1.4rem;
+        }
+
+        .menu-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2e4a34;
+            margin-bottom: 40px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding-bottom: 20px;
+        }
+
+        .menu-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-card h3 {
+            margin: 15px;
+            font-size: 1.3rem;
+            color: #2e4a34;
+        }
+
+        .menu-card h4,
+        .menu-card h5 {
+            margin: 5px 15px;
+            font-weight: normal;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .menu-card p {
+            margin: 5px 15px 15px;
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        footer {
+            background: #2e4a34;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.95rem;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+
+<header class="menu-header">
+    <div class="header-content">
+        <h1>Healthy Kitchen</h1>
+        <h2>Your Nutritious Dinner Menu Awaits!</h2>
+        <p class="tagline">Fresh ingredients. Balanced meals. Taste you’ll love.</p>
+    </div>
+</header>
+
+
+<section class="menu-section">
+    <h2>Balanced Night Bites                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </h2>
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/breakfast idly.jpg') }}" alt="Idly">
+            <h3>Idly</h3>
+            <p>Rs. 30</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/bf dosa.jpg') }}" alt="Dosa">
+            <h3>Dosa Specials</h3>
+            <h5>Plain Dosa - Rs. 50</h5>
+            <h5>Chicken Kari Dosa - Rs. 120</h5>
+            <h5>Mutton Kari Dosa - Rs. 180</h5>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/D PAROTTA.jpeg') }}" alt="Parotta">
+            <h3>Parotta Specials</h3>
+            <h5>Parotta - Rs. 20</h5>
+            <h5>Veechi Parotta - Rs. 100</h5>
+            <h5>Kothu Parotta - Rs. 140</h5>
+            <h5>Chicken Stuff Parotta - Rs. 200</h5>
+            <h5>Mutton Stuff Parotta - Rs. 250</h5>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/D CHAPATHI.jpeg') }}" alt="Chapathi">
+            <h3>Chapathi</h3>
+            <h5>2 Pieces</h5>
+            <p>Rs. 50</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/d chicken.jpeg') }}" alt="Chicken Dishes">
+            <h3>Chicken Specials</h3>
+            <h5>Chicken Rice - Rs. 150</h5>
+            <h5>Grill Chicken - Rs. 380</h5>
+            <h5>Butter Chicken Masala - Rs. 240</h5>
+            <h5>Hyderabad Chicken Masala - Rs. 230</h5>
+            <h5>Chicken Pepper Masala - Rs. 230</h5>
+            <h5>Kadai Chicken - Rs. 240</h5>
+            <h5>Chicken Lollipop Manchurian - Rs. 230</h5>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/d mutton.jpeg') }}" alt="Mutton Dishes">
+            <h3>Mutton Specials</h3>
+            <h5>Mutton Rogan Gosh - Rs. 300</h5>
+            <h5>Hyderabad Mutton Masala - Rs. 280</h5>
+            <h5>Mutton Chettinadu - Rs. 300</h5>
+            <h5>Mutton Pepper Masala - Rs. 280</h5>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <a href="/">← Back to Menu</a> | 📞 Call: +91 9876-543-210 | 🌐 www.healthykitchen.com
+</footer>
+
+</body>
+</html>

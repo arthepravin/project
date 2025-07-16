@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block tittle %}Healthy Kitchen{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base_asmt.css') }}" />
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fffefc);
+            color: #2e2e2e;
+            background-color: white; /* Full white background */
+            
+        }
+
+        header {
+            background: linear-gradient(to right, #2e4a49ff, #3e6c4c);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 180px;
+            width: 180px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 10px 0 5px;
+        }
+
+        header h3 {
+            font-weight: 400;
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 1.1rem;
+            color: #d0e9d0;
+        }
+
+        nav {
+            background: #e3f2e8;
+            text-align: center;
+            padding: 15px;
+            box-shadow: inset 0 -1px 0 #ccc;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2e4a34;
+            font-weight: bold;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 3px;
+            background: #2e4a34;
+            transition: 0.3s;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #ccc;
+            margin: 0;
+        }
+
+        .home-bg,
+        .about-bg,
+        .contact-bg {
+            min-height: 100vh;
+            padding-bottom: 80px; /* To prevent overlap with footer */
+        }
+
+        footer {
+            background: #2e4a34;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.95rem;
+            position: relative;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, #d4efdf, #82e0aa);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            header img {
+                position: static;
+                display: block;
+                margin: 0 auto 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 10px;
+                font-size: 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+        .section {
+        padding: 60px 30px;
+        background: #fff;
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+        }
+
+        .section h2 {
+        font-size: 2.2rem;
+        color: #2e4a34;
+        margin-bottom: 20px;
+        }
+
+        .section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 20px;
+        text-align: justify;
+        }
+
+        .section .quote {
+        font-size: 1.5rem;
+        color: #3d6c4c;
+        font-weight: bold;
+        margin: 25px 0;
+        font-style: italic;
+        text-shadow: 1px 1px 2px #ccc;
+        }
+
+        .breakfast-section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+        background-color: #ffffff;
+        text-align: center;
+        }
+
+        .breakfast-section h2 {
+        font-size: 2rem;
+        color: #2e4a34;
+        margin-bottom: 30px;
+        font-weight: bold;
+        }
+
+        .breakfast-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        }
+
+        .breakfast-content img {
+        width: 300px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        }
+
+        .breakfast-content img:hover {
+        transform: scale(1.05);
+        }
+
+        .breakfast-content p {
+        max-width: 500px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.8;
+        text-align: justify;
+        color: #333;
+        }
+
+        @media (max-width: 768px) {
+        .breakfast-content {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .breakfast-content img {
+            width: 90%;
+        }
+
+        .breakfast-content p {
+            font-size: 1rem;
+            padding: 0 10px;
+        }
+        }
+
+
+        .meals-section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+        background-color: #ffffff;
+        text-align: center;
+        }
+
+        .meals-section h2 {
+        font-size: 2rem;
+        color: #2e4a34;
+        margin-bottom: 30px;
+        font-weight: bold;
+        }
+
+        .meals-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        }
+
+        .meals-content img {
+        width: 300px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        }
+
+        .meals-content img:hover {
+        transform: scale(1.05);
+        }
+
+        .meals-content p {
+        max-width: 500px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.8;
+        text-align: justify;
+        color: #333;
+        }
+
+        @media (max-width: 768px) {
+        .meals-content {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .meals-content img {
+            width: 90%;
+        }
+
+        .meals-content p {
+            font-size: 1rem;
+            padding: 0 10px;
+        }
+        }
+
+        .dinner-section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+        background-color: #ffffff;
+        text-align: center;
+        }
+
+        .dinner-section h2 {
+        font-size: 2rem;
+        color: #2e4a34;
+        margin-bottom: 30px;
+        font-weight: bold;
+        }
+
+        .dinner-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        }
+
+        .dinner-content img {
+        width: 300px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        }
+
+        .dinner-content img:hover {
+        transform: scale(1.05);
+        }
+
+        .dinner-content p {
+        max-width: 500px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.8;
+        text-align: justify;
+        color: #333;
+        }
+
+        @media (max-width: 768px) {
+        .dinner-content {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .dinner-content img {
+            width: 90%;
+        }
+
+        .dinner-content p {
+            font-size: 1rem;
+            padding: 0 10px;
+            }
+
+        footer {
+        background: linear-gradient(to right, #393e46, #222831);
+        color: #ccc;
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 1rem;
+        line-height: 1.8;
+        }
+
+        footer a {
+        color: #00fff2;
+        text-decoration: none;
+        }
+
+        footer a:hover {
+        text-decoration: underline;
+        color: #00adb5;
+        }
+
+        }
+
+
+    </style>
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+   <header>
+  <div class="header-content">
+    <img src="{{ url_for('static', filename='image/LOGO healthy kitchen.png') }}" alt="Healthy Kitchen Logo" />
+    <div class="text-content">
+      <h1>Healthy Kitchen</h1>
+      <h3>AT CHENNAI - 600 002</h3>
+      <p>Fresh, Wholesome & Delicious</p>
+    </div>
+  </div>
+</header>
+
+
+    <nav>
+        <a class="home" href="/">HOME</a> |
+        <a class="about" href="/about">ABOUT</a> |
+        <a class="contact" href="/contact">CONTACT</a>
+    </nav>
+
+    <hr>
+
+    {% block content %}{% endblock %}
+<footer>
+  <p>Visit us or order online — your healthful dining starts here! 🥗</p>
+  <p>
+    📍 <strong>Location:</strong> No. 45, Anna Salai, Chennai, India<br>
+    📞 <strong>Call:</strong> <a href="tel:+1234567890">+123-456-7890</a> |
+    🌐 <strong>Website:</strong> <a href="https://www.healthykitchen.com" target="_blank">www.healthykitchen.com</a>
+  </p>
+  <p style="margin-top: 10px; font-size: 0.85rem; color: #bbb;">&copy; 2025 Healthy Kitchen | Powered by Chiyaan WebWorks 🚀</p>
+</footer>
+
+</body>
+</html>

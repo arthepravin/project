@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Kitchen - Breakfast Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #fefefe;
+            color: #2e2e2e;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #2e4a34, #4a7c59);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        header h2 {
+            font-size: 1.4rem;
+            font-weight: normal;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .menu-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #2e4a34;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-card h3 {
+            margin: 15px;
+            color: #2e4a34;
+            font-size: 1.2rem;
+        }
+
+        .menu-card h4, .menu-card p {
+            margin: 0 15px 10px;
+            color: #555;
+        }
+
+        .menu-card p {
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        /* Footer */
+        footer {
+            background: #2e4a34;
+            color: #eee;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.95rem;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header class="breakfast-header">
+  <div class="header-inner">
+    <h1>Healthy Kitchen</h1>
+    <h2>Start Your Day with a Healthy Breakfast</h2>
+    <p class="subtext">Wholesome, fresh, and full of energy – just for you!</p>
+  </div>
+</header>
+
+
+<section class="menu-section">
+    <h2>Energy-Boosting Plates</h2>
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/bf combo.jpeg') }}" alt="Combo">
+            <h3>Regular Combo</h3>
+            <h4>3 Idly, 1 Onion Dosa, 1 Vadai</h4>
+            <h4>With Sambar & Chutney</h4>
+            <p>Rs. 60</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/breakfast idly.jpg') }}" alt="Idly">
+            <h3>Idly</h3>
+            <h4>2 Pieces</h4>
+            <p>Rs. 30</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/bf dosa.jpg') }}" alt="Dosa">
+            <h3>Dosa Varieties</h3>
+            <h4>Plain - Rs. 50</h4>
+            <h4>Masala - Rs. 100</h4>
+            <h4>Ghee - Rs. 140</h4>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/bf idiyaapam.jpeg') }}" alt="Idiyappam">
+            <h3>Idiyappam</h3>
+            <h4>2 Pieces</h4>
+            <p>Rs. 60</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/bf poori.jpeg') }}" alt="Poori">
+            <h3>Poori</h3>
+            <h4>3 Pieces</h4>
+            <p>Rs. 60</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/bf pongal.jpeg') }}" alt="Pongal">
+            <h3>Pongal</h3>
+            <p>Rs. 60</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <a href="/">← Back to Main Menu</a> &nbsp;|&nbsp; 📞 Call: +91 9876-543-210 &nbsp;|&nbsp; 🌐 www.healthykitchen.com
+</footer>
+
+</body>
+</html>

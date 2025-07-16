@@ -1,0 +1,138 @@
+{% extends 'base_asmt.html' %}
+
+{% block tittle %} contact {% endblock %}
+
+{% block body_class %} contact-bg {% endblock %}
+
+{% block content %}
+<style>
+  body.contact-bg {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  header {
+    background: #2e4a34;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #2e4a34;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #2e4a34;
+    outline: none;
+    box-shadow: 0 0 5px rgba(46, 74, 52, 0.3);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  button {
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #2e4a34;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #3d6c4c;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      margin: 20px;
+      padding: 25px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    input,
+    textarea {
+      font-size: 1rem;
+    }
+
+    button {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<header>
+  <h1>Place Your Order</h1>
+</header>
+
+<div class="container">
+  <form action="{{ url_for('place_order') }}" method="post">
+
+    <label for="customer_name">Full Name</label>
+    <input type="text" id="customer_name" name="customer_name" placeholder="Enter your name" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" maxlength="10" pattern="\d{10}" name="phone" placeholder="Enter 10-digit mobile number"  required />
+
+    <label for="address">Delivery Address</label>
+    <textarea id="address" name="address" placeholder="Enter full address with landmark" required ></textarea>
+
+    <label for="order_items">Your Order</label>
+    <textarea id="order_items" name="order_items" placeholder="E.g., 2 Masala Dosa, 1 Chicken Biryani" required></textarea>
+
+    <label for="instructions">Special Instructions (Optional)</label>
+    <textarea id="instructions" name="instructions" placeholder="E.g., No onion, extra chutney"></textarea>
+
+    <button type="submit">Place Order</button>
+  </form>
+</div>
+
+{% endblock %}
+

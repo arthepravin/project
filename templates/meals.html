@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Kitchen - Meals Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #fef9f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #2e4a34, #486c52);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-weight: 400;
+            font-size: 1.4rem;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2e4a34;
+            margin-bottom: 40px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-card h3 {
+            margin: 15px;
+            font-size: 1.3rem;
+            color: #2e4a34;
+        }
+
+        .menu-card h5 {
+            margin: 5px 15px;
+            font-size: 0.95rem;
+            font-weight: normal;
+            color: #555;
+        }
+
+        .menu-card p {
+            margin: 5px 15px 20px;
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        /* Footer */
+        footer {
+            background: #2e4a34;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.95rem;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header class="meals-header">
+  <div class="header-container">
+    <h1>Healthy Kitchen</h1>
+    <h2>Delicious & Balanced Meals Menu</h2>
+    <p class="header-tagline">Crafted with care. Powered by nutrition. Served with love.</p>
+
+  </div>
+</header>
+
+
+<section class="menu-section">
+    <h2>Fuel Your Day</h2>
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/m veg.jpeg') }}" alt="Vegetarian Meal">
+            <h3>Vegetarian Meal</h3>
+            <p>Rs. 150</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/m non veg.jpeg') }}" alt="Non-Vegetarian Meal">
+            <h3>Non-Vegetarian Meal</h3>
+            <p>Rs. 220</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/m mutton bri.jpeg') }}" alt="Mutton Briyani">
+            <h3>Mutton Briyani</h3>
+            <p>Rs. 330</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/m chicken bri.jpeg') }}" alt="Chicken Briyani">
+            <h3>Chicken Briyani</h3>
+            <p>Rs. 240</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/M  PRAWNS.jpeg') }}" alt="Prawns Special">
+            <h3>Prawns Special</h3>
+            <h5>prawn briyani - rs.170</h5>
+            <h5>Prawns Masala Fry - Rs. 200</h5>
+            <h5>Prawns Pepper Fry - Rs. 190</h5>
+            <h5>Golden Fried Prawns - Rs. 210</h5>
+            <h5>Prawns Manchurian - Rs. 210</h5>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/M CRABS.jpeg') }}" alt="Crab Special">
+            <h3>Crabs Special</h3>
+            <h5>Crab Masala Fry - Rs. 200</h5>
+            <h5>Crab Pepper Fry - Rs. 190</h5>
+            <h5>Tandoori Crab - Rs. 210</h5>
+            <h5>Crab Manchurian - Rs. 210</h5>
+        </div>
+
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='image/m curd.jpeg') }}" alt="Curd Rice">
+            <h3>Curd Rice</h3>
+            <p>Rs. 60</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <a href="/">← Back to Menu</a> | 📞 Call: +91 9876-543-210 | 🌐 www.healthykitchen.com
+</footer>
+
+</body>
+</html>

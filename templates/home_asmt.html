@@ -1,0 +1,72 @@
+{% extends 'base_asmt.html'%}
+
+{% block tittle %} home {% endblock %}
+
+{% block body_class%} home-bg {% endblock %}
+
+{% block content %}
+<div id="container">
+  <section class="section">
+    <h2>Our Story</h2>
+    <p><strong>At Healthy Kitchen</strong>, we believe that <strong>food is more than just sustenance</strong> — it’s an <strong>experience</strong>, a <strong>memory</strong>, and a <strong>celebration of life</strong>.</p>
+
+    <h3 class="quote">LIFE IS DULL WITHOUT GOOD FOOD</h3>
+
+    <p><strong>Our humble beginnings</strong> started with a vision: to bring <strong>healthy, home-style meals</strong> to every doorstep in Villupuram. With a passion for taste and a commitment to wellness, we serve dishes that not only <strong>fill your stomach</strong> but <strong>touch your heart</strong>.</p>
+
+    <p>From <strong>traditional South Indian breakfasts</strong> to <strong>comforting dinners</strong>, every meal is made with <strong>love, hygiene, and the finest ingredients</strong>. Join our journey of <strong>healthful eating — one plate at a time</strong>.</p>
+  </section>
+</div>
+
+
+<section class="section breakfast-section">
+  <h2>Breakfast</h2>
+
+  <div class="breakfast-content">
+    <a href="{{ url_for('breakfast') }}">
+      <img src="{{ url_for('static', filename='image/breakfast.jpeg') }}" alt="Healthy Kitchen Breakfast">
+    </a>
+
+    <p>
+      <strong>Our breakfast services</strong> bring <strong>home-style healthy meals</strong> straight to your doorstep.  
+      Taste, nutrition, and convenience in every box — start your day with <strong>delicious energy!</strong>
+    </p>
+  </div>
+</section>
+
+
+<section class="section meals-section">
+  <h2>Meals</h2>
+
+  <div class="meals-content">
+    <a href="{{ url_for('meals') }}">
+      <img src="{{ url_for('static', filename='image/lunch.jpeg') }}" alt="Healthy Kitchen Meal">
+    </a>
+
+    <p>
+      <strong>Explore our variety of vitamin-rich, low-calorie meals</strong> that are perfect for a <strong>balanced diet</strong> and an <strong>energetic lifestyle</strong>.  
+      Taste meets nutrition in every delicious bite.
+    </p>
+  </div>
+</section>
+
+
+<section class="section dinner-section">
+  <h2>Dinner Delights</h2>
+
+  <div class="dinner-content">
+    <a href="{{ url_for('dinner') }}">
+      <img src="{{ url_for('static', filename='image/dinner.jpeg') }}" alt="Healthy Kitchen Dinner Delight">
+    </a>
+
+    <p>
+      <strong>Wind down your day</strong> with a <strong>delicious and nourishing dinner</strong> from our specially curated menu —  
+      made fresh with care, for comfort and wellness on every plate.
+    </p>
+  </div>
+</section>
+
+</div>
+
+
+{% endblock %}
